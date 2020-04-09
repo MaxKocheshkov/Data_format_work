@@ -7,7 +7,6 @@ def count_words():
         word_dict = f.read()
         word_dict = word_dict.lower()
         output_words = re.findall(r"\b[а-я]{6,}", word_dict)
-# print(output_words)
 
     c = Counter(output_words)
     print(f'Наиболее часто встречающиеся слова : {c.most_common(10)}')

@@ -33,9 +33,9 @@ def work_xml():
         for words in xml_descripction:
             words = words.text
             find_words = words.lower()
-            temp_file = open("temp.txt", "a", encoding = 'utf-8')
-            temp_file.write(find_words)
-            temp_file.close()
+            tmp_file = open("temp.txt", "a", encoding = 'utf-8')
+            tmp_file.write(find_words)
+            tmp_file.close()
 
     output_message = c_w.count_words()
     print(output_message)
