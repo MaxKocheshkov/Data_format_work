@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-from collections import Counter
+import count_words as c_w
 
 parser = ET.XMLParser(encoding="utf-8")
 
@@ -12,8 +12,11 @@ for xmli in xml_items:
     xml_descripction = xmli.findall("description")
     for words in xml_descripction:
         words = words.text
-        find_words = words.lower().split()
+        find_words = words.lower()
+        temp_file = open("temp.txt", "a", encoding = 'utf-8')
+        temp_file.write(find_words)
+        temp_file.close()
 
-output_value_xml = Counter(find_words)
-print(f'Наиболее часто встречающиеся слова : {output_value_xml.most_common(10)}')
+output_message = c_w.count_words()
+print(output_message)
 
